@@ -897,7 +897,7 @@ function! s:command_sink(lines)
   let cmd = matchstr(a:lines[1], s:nbs.'\zs\S*\ze'.s:nbs)
   if empty(a:lines[0])
     let feedKeysCommand = ':'.cmd.(a:lines[1][0] == '!' ? '' : ' ')
-    if get(g:, 'commands_insert_carriage_return')
+    if get(g:, 'fzf_commands_insert_carriage_return')
       let feedKeysCommand = feedKeysCommand."\<CR>"
     endif
     call feedkeys(feedKeysCommand, 'n')
